@@ -1,0 +1,81 @@
+<!--Proyecto realizado por: José A. Rodríguez López-->
+<!--Fecha: 05/10/2022-->
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Conversión de caracteres UNICODE</title>
+  <link rel="stylesheet" type="text/css" href="./css/estilos.css">
+  <script src="./js/javascript.js" defer></script>
+
+</head>
+
+<body>
+  <main id="principal">
+    <header class="cabecera">
+      <div id="contenedor_1">
+        <!-- Logo y TITULO-->
+        <h1 id="tit_principal">Yo se escribir en CHINO con ñ y á acentuada</h1>
+        <p id="cerrar_navegador">Cerrar Navegador</p>
+      </div>
+    </header>
+    <article class="titulo">
+      <h2>
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-code-square"
+          viewBox="0 0 16 16">
+          <path
+            d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z" />
+          <path
+            d="M6.854 4.646a.5.5 0 0 1 0 .708L4.207 8l2.647 2.646a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 0 1 .708 0zm2.292 0a.5.5 0 0 0 0 .708L11.793 8l-2.647 2.646a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708 0z" />
+        </svg>
+        Escribir en CHINO
+      </h2>
+    </article>
+
+    <article class="conversor">
+      <header>
+        <h3>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+            <path fill-rule="evenodd"
+              d="M8.114 2.094a.75.75 0 01.386.656V9h1.252a.75.75 0 110 1.5H5.75a.75.75 0 010-1.5H7V4.103l-.853.533a.75.75 0 01-.795-1.272l2-1.25a.75.75 0 01.762-.02zm4.889 5.66a.75.75 0 01.75-.75h5.232a.75.75 0 01.53 1.28l-2.776 2.777c.55.097 1.057.253 1.492.483.905.477 1.504 1.284 1.504 2.418 0 .966-.471 1.75-1.172 2.27-.687.511-1.587.77-2.521.77-1.367 0-2.274-.528-2.667-.756a.75.75 0 01.755-1.297c.331.193.953.553 1.912.553.673 0 1.243-.188 1.627-.473.37-.275.566-.635.566-1.067 0-.5-.219-.836-.703-1.091-.538-.284-1.375-.443-2.471-.443a.75.75 0 01-.53-1.28l2.643-2.644h-3.421a.75.75 0 01-.75-.75zM7.88 15.215a1.4 1.4 0 00-1.446.83.75.75 0 01-1.37-.61 2.9 2.9 0 012.986-1.71 2.565 2.565 0 011.557.743c.434.446.685 1.058.685 1.778 0 1.641-1.254 2.437-2.12 2.986-.538.341-1.18.694-1.495 1.273H9.75a.75.75 0 010 1.5h-4a.75.75 0 01-.75-.75c0-1.799 1.337-2.63 2.243-3.21 1.032-.659 1.55-1.031 1.55-1.8 0-.355-.116-.584-.26-.732a1.068 1.068 0 00-.652-.298z">
+            </path>
+          </svg>
+          Conversión de unos carácteres UNICODE a otros
+        </h3>
+      </header>
+      <div id="contenedor_2">
+        <label for="cadena_procesar">Introduce cadena de caracteres a convertir:</label>
+        <br>
+        <input type="text" name="cadena_procesar" id="cadena_procesar" value="">
+        <div id="contenedor_3">
+        </div>
+      </div>
+    </article>
+    <aside class="teoria">
+      <div id="datos_1">
+        <h3>Datos de Tipo String UNICODE</h3>
+      </div>
+
+      <div id="datos_2">
+        <h3>String</h3>
+        <p>La clase String incluye métodos y propiedades para procesar cadenas de caracteres.</p>
+        <p>Un string es un array de caracteres, con un indice entre 0 y número_de_caracteres-1. Cada índice representa un carácter del string.</p>
+        <p><b>La propiedad length devuelve el número de caracteres en el string:<br>'ciudad'.length=>6</b></p>
+        <p><b>Utilizando el string como un array:<br>'ciudad'[2]=>'u'</b><br>Devuelve el caracter del índice 2 (comienza en 0).</p>
+        <p><b>Método:<br>'ciudad'.charCodeAt(2)=>117</b><br>Devuelve el código UNICODE del tercer carácter.</p>
+        <p><b>Método:<br>'ciudad'.indexOf('da')=>3</b><br>Devuelve la posición de la subcadena.</p>
+        <p><b>Método:<br>'ciudad'.substring(2, 5)=>'uda'</b><br>Devuelve la subcadena entre ambos índices.</p>
+      </div>
+    </aside>
+    <footer class="pie">
+      <p>Desarrollo de aplicaciones Web(DAW) &copy; CIFP Santa Catalina</p>
+      <p>Realizado por: José A. Rodríguez López.</p>
+    </footer>
+  </main>
+</body>
+
+</html>
