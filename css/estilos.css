@@ -7,26 +7,26 @@ main {
   grid-template-areas:
     'a a a'
     'b b c'
-    'd d c'
-    'e e e';
-  grid-template-rows: auto 100px auto auto;
-  grid-template-columns: 1fr 2fr 1fr;
+    'd d d';
+  grid-template-rows: auto auto auto;
+  grid-template-columns: 1fr 1fr 1fr;
 }
 
 .cabecera {
   grid-area: a;
-  padding-left: 20px;
   margin: 10px 10px 5px 10px;
 }
 
 .cabecera h1 {
-  background-color: cyan;
+  background-color:#beb5ef;
   padding-left: 20px;
   margin: 0px;
+  text-decoration: underline;
+  text-align: center;
 }
 
 #cerrar_navegador {
-  background: linear-gradient(to left, blue, white);
+  background: linear-gradient(to right, rgb(231, 237, 153), rgb(136, 244, 246));
   color: blueviolet;
   text-decoration: underline;
   font-weight: bold;
@@ -35,68 +35,35 @@ main {
   margin: 0px;
 }
 
-.titulo {
+.ahorcado {
+  background: rgb(251, 187, 164);
   grid-area: b;
-  background: linear-gradient(to right, blue, white);
-  margin: 10px 5px 10px 40px;
-  padding: 10px;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  font-style: italic;
-  color: darkturquoise;
-  vertical-align: middle;
-}
-
-.conversor {
-  background: linear-gradient(to right top, blue, white);
-  grid-area: d;
   margin: 10px 5px 10px 40px;
   padding: 30px;
 }
 
-.conversor div {
+.ahorcado div {
   padding: 40px;
+}
+
+.ahorcado div input{
+  margin:20px;
 }
 
 aside {
   grid-area: c;
   margin-top: 5px;
   margin: 5px 10px 10px 10px;
-  font-family: carlito;
 }
 
 aside div {
   margin: 10px;
-  background-color: rgb(182, 180, 180);
+  background-color: rgb(245, 217, 217);
   padding: 10px;
-}
-
-#datos_1 h3 {
-  text-align: center;
-  margin: 10px 10px 0px 10px;
-}
-
-#datos_1 ul {
-  margin: 2px;
-  padding-left: 15px;
-}
-
-#datos_2 h3 {
-  margin: 10px 10px 0px 0px;
-}
-
-#datos_2 ul {
-  margin: 2px;
-  list-style: none;
-  padding: 10px;
-  padding-top: 0px;
-}
-
-#datos_2 p {
-  text-align: justify;
 }
 
 .pie {
-  grid-area: e;
+  grid-area: d;
   margin-top: 20px;
   background-color: white;
   text-align: center;
@@ -121,6 +88,8 @@ input {
   width: 400px;
 }
 
-#contenedor_3{
-  padding: 0px;
+#input_letra {
+  text-align: center;
+  width: 20px;
 }
+

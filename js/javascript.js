@@ -2,55 +2,52 @@
  * Fecha: 10/10/2022
  */
 
-/*Añade escuchador del evento al despulsar una tecla en el <input id="cadena_procesar">*/
-cadena_procesar.addEventListener('keyup', realizarConversion, false)
+let pal_adivinar; //Palabra a adivinar.
+let pal_aciertos; //Palabra con los aciertos.
+let pal_errores; //Palabra con los errores.
+const MAX_ERRORES=6;  //Máximo número de errores. 
+let errores=0;  //Contador de errores.
+
+/*Añade escuchador del evento de perdida del foco el <input id="input_adivinar">*/
+input_adivinar.addEventListener('blur', empiezaJuego, false)
+
+/*Añade escuchador del evento de keypress del <input id="input_letra">*/
+input_letra.addEventListener('keyup', comprobarLetra, false)
 
 /*Captura el evento de onclick en la <p id="cerrar_navegador">*/
 cerrar_navegador.onclick = function () {
   window.close()
 }
 
-/*Función que realiza la conversión del caracter al idiograma chino en la cadena.*/
-function realizarConversion(evento) {
+/*Función que da comienzo a la ejecucion del juego*/
+function empiezaJuego(evento) {
+  input_adivinar.readOnly=true;
+  pal_errores=""; //Iniciliza la palabra con los errores.
+  pal_adivinar=input_adivinar.value.trim().toUpperCase();
+  pal_aciertos=pal_adivinar.replace(/[a-z]/gi,"-");
+  input_aciertos.value=pal_aciertos;
+}  
+
+function comprobarLetra(){
   
-  //console.log(evento.keyCode) //Depuracion. Imprime el código de la tecla en consola.
-  
-  //Filtra las teclas que son válidas.
-  //Solo tiene en cuenta para la conversion las teclas de las letras y son de las que muestra su información.
-  if ((evento.keyCode >= 65 && evento.keyCode <= 90) || evento.keyCode == 192) {
-    let cadena = cadena_procesar.value
-    //Si la cadena tiene caracteres.
-    if (cadena.length >= 0) {
-      //Código UNICODE del caracter.
-      let codigo_caracter = cadena.charCodeAt(cadena.length - 1)
-      let caracter = cadena.charAt(cadena.length - 1)
-      //console.log(evento.keyCode+" "+codigo_caracter+" "+caracter); //Ayuda a la depuración.
-      //Muestras la información generada.
-      mostrarInformacion(codigo_caracter, caracter, evento)
-      caracter = String.fromCharCode(parseInt('0x' + codigo_caracter + 'e8'))
-      //Realiza la conversión.
-      cadena = cadena.substring(0, cadena.length - 1) + caracter
-      //Actualiza la cadena dentro del input.
-      cadena_procesar.value = cadena
+    
+    let letra_buscar=input_letra.value.toUpperCase();
+    if(pal_adivinar.includes(letra_buscar)){
+      for (let index = 0; index < pal_adivinar.length; index++) {
+        if(pal_adivinar[index]===letra_buscar)
+          pal_aciertos=pal_aciertos.reemplazarCaracter(index, letra_buscar);
+      }
+      input_aciertos.value=pal_aciertos;
+    }else{
+      errores++;
+      pal_errores=pal_errores+letra_buscar+" ";
+      input_errores.value=pal_errores;
     }
-  }
+  
 }
 
-/*Función que muestra la información generada*/
-function mostrarInformacion(codigo, cadena, evento) {
-  let texto = contenedor_3.innerHTML
-  //Muestras la información generada.
-  texto =
-    texto +
-    '<p>-----------------------------------</p>' +
-    '<p>Tipo de evento: ' +
-    evento.type +
-    '</p>' +
-    '<p>Propiedad KeyCode: ' +
-    codigo +
-    '</p>' +
-    '<p>Carácter pulsado: ' +
-    cadena +
-    '</p>'
-  contenedor_3.innerHTML = texto
+String.prototype.reemplazarCaracter=function(index, caracter){
+  let caracteres=this.split('');
+  caracteres[index]=caracter;
+  return caracteres.join('');
 }
