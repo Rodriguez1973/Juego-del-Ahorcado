@@ -5,40 +5,65 @@
 main {
   display: grid;
   grid-template-areas:
-    'a a a'
-    'b b c'
-    'd d d';
-  grid-template-rows: auto auto auto;
-  grid-template-columns: 1fr 1fr 1fr;
+    'a a a a'
+    'b b b c'
+    'b b b c'
+    'd d d d';
+  grid-template-rows: auto auto auto auto;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 
 .cabecera {
   grid-area: a;
-  margin: 10px 10px 5px 10px;
+  margin: 10px;
 }
 
-.cabecera h1 {
-  background-color:#beb5ef;
-  padding-left: 20px;
+#contenedor{
+  background-color: #beb5ef;
+  width: 100%;
+  margin:0;
+  display: flex;
+  justify-content: center;
+  }
+
+#titulo {
+  display: flex;
+  flex-direction: row;
+ 
+}
+
+.cabecera > div div {
+  background-color: #beb5ef;
+  padding-top: 15px;
+  padding-left:75px;
+  padding-right: 75px;
+  padding-bottom: 15px;
   margin: 0px;
+}
+
+#tit_principal {
+  background-color: #beb5ef;
   text-decoration: underline;
   text-align: center;
+  padding: 15px;
+  margin: 0px;
+  top: 50%;
 }
 
-#cerrar_navegador {
+#cerrar {
   background: linear-gradient(to right, rgb(231, 237, 153), rgb(136, 244, 246));
   color: blueviolet;
   text-decoration: underline;
   font-weight: bold;
-  padding-left: 20px;
-  font-weight: bold;
+  padding: 15px;
   margin: 0px;
+  text-align: left;
 }
 
 .ahorcado {
   background: rgb(251, 187, 164);
   grid-area: b;
-  margin: 10px 5px 10px 40px;
+  margin: 10px 5px 10px 10px;
   padding: 30px;
 }
 
@@ -46,14 +71,13 @@ main {
   padding: 40px;
 }
 
-.ahorcado div input{
-  margin:20px;
+.ahorcado div input {
+  margin: 20px;
 }
 
 aside {
   grid-area: c;
-  margin-top: 5px;
-  margin: 5px 10px 10px 10px;
+  margin: 0px 0px 10px 5px;
 }
 
 aside div {
@@ -92,4 +116,3 @@ input {
   text-align: center;
   width: 20px;
 }
-
