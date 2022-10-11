@@ -107,7 +107,7 @@ aside img {
 label,
 input,
 #cerrar_navegador {
-  font-size: 17px;
+  font-size: 20px;
 }
 
 label {
@@ -126,6 +126,13 @@ input {
 
 #notificaciones {
   text-align: center;
-  font-size: 15px;
+  font-size: 20px;
   color: red;
+  padding: 0px;
+}
+
+#reiniciar{
+  display: flex;
+  justify-content: center;
+  padding:0px;
 }
