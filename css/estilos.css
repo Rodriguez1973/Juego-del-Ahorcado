@@ -5,10 +5,10 @@
 main {
   display: grid;
   grid-template-areas:
-    'a a a a'
-    'b b b c'
-    'b b b c'
-    'd d d d';
+    "a a a a"
+    "b b b c"
+    "b b b c"
+    "d d d d";
   grid-template-rows: auto auto auto auto;
   grid-template-columns: 1fr 1fr 1fr 1fr;
 }
@@ -18,24 +18,23 @@ main {
   margin: 10px;
 }
 
-#contenedor{
+#contenedor {
   background-color: #beb5ef;
   width: 100%;
-  margin:0;
+  margin: 0;
   display: flex;
   justify-content: center;
-  }
+}
 
 #titulo {
   display: flex;
   flex-direction: row;
- 
 }
 
 .cabecera > div div {
   background-color: #beb5ef;
   padding-top: 15px;
-  padding-left:75px;
+  padding-left: 75px;
   padding-right: 75px;
   padding-bottom: 15px;
   margin: 0px;
@@ -77,13 +76,21 @@ main {
 
 aside {
   grid-area: c;
-  margin: 0px 0px 10px 5px;
+  background-color: rgb(245, 217, 217);
+  margin: 10px 10px 10px 10px;
+  display: flex;
+  justify-content: center;
+  vertical-align: middle;
 }
 
 aside div {
-  margin: 10px;
-  background-color: rgb(245, 217, 217);
-  padding: 10px;
+  margin: 0px;
+  padding: 20px;
+}
+
+aside img {
+  padding: 30px;
+  background-color: white;
 }
 
 .pie {
@@ -115,4 +122,10 @@ input {
 #input_letra {
   text-align: center;
   width: 20px;
+}
+
+#notificaciones {
+  text-align: center;
+  font-size: 15px;
+  color: red;
 }
