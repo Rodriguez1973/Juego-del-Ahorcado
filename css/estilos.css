@@ -5,10 +5,10 @@
 main {
   display: grid;
   grid-template-areas:
-    "a a a a"
-    "b b b c"
-    "b b b c"
-    "d d d d";
+    'a a a a'
+    'b b b c'
+    'b b b c'
+    'd d d d';
   grid-template-rows: auto auto auto auto;
   grid-template-columns: 1fr 1fr 1fr 1fr;
 }
@@ -131,8 +131,8 @@ input {
   padding: 0px;
 }
 
-#reiniciar{
+#reiniciar {
   display: flex;
   justify-content: center;
-  padding:0px;
+  padding: 0px;
 }

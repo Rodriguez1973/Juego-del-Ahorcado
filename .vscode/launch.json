@@ -8,7 +8,7 @@
             "type": "chrome",
             "request": "launch",
             "name": "Open index.html",
-            "file": "e:/Juego del Ahorcado/index.html"
+            "file": "C:/Users/j0626/Desktop/Carpeta compartida/Juego-del-Ahorcado/index.html"
         }
     ]
 }
